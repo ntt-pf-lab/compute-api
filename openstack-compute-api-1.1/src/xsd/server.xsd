@@ -560,7 +560,7 @@
           xml:lang="EN"
           xmlns="http://www.w3.org/1999/xhtml">
           <p>
-            Availability zone
+            Availability zone (format is zone:servername)
           </p>
         </xsd:documentation>
       </annotation>
