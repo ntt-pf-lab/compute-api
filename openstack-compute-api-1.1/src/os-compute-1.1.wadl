@@ -34,7 +34,7 @@
     <!--*******************************************************-->
 
     <resources base="https://servers.api.openstack.com">
-        <resource id="version" type="#VersionDetails" path="v1.1/">
+        <resource id="version" type="#VersionDetails" path="v1.1">
             <resource id="extensions" type="#ExtensionList" path="extensions">
                 <resource id="extension" path="{alias}">
                     <param name="alias" style="template" type="xsd:string"/>
@@ -63,7 +63,7 @@
                             <method href="#revertServer"/>
                             <method href="#createImage"/>
                         </resource>
-                        <method href="#pause"/>
+                        <method href="#pause"/>/
                         <method href="#unpause"/>
                         <method href="#suspend"/>
                         <method href="#resume"/>
@@ -125,7 +125,7 @@
     </resource_type>
 
     <resource_type id="DetailServerList">
-        <doc xml:lang="EN" title="Detail Image List">
+        <doc xml:lang="EN" title="Detail Server List">
             <p xmlns="http://www.w3.org/1999/xhtml">
                 A detailed server list.
             </p>
@@ -880,9 +880,9 @@
     </method>
     
     <method name="POST" id="inject_network_info">
-        <doc xml:lang="EN" title="reset_network">
+        <doc xml:lang="EN" title="inject_network_info">
             <p xmlns="http://www.w3.org/1999/xhtml">
-                Reset network of a server
+                Inject Network Info to the server
             </p>
         </doc>
         <response status="202"/>
