@@ -215,6 +215,30 @@
     </annotation>
   </element>
 
+  <element name="addFixedIp" type="csapi:AddFixedIp">
+    <annotation>
+      <xsd:documentation
+        xml:lang="EN"
+        xmlns="http://www.w3.org/1999/xhtml">
+        <p>
+          Adds an IP on a given network to an instance.
+        </p>
+      </xsd:documentation>
+    </annotation>
+  </element>
+  
+  <element name="removeFixedIp" type="csapi:RemoveFixedIp">
+    <annotation>
+      <xsd:documentation
+        xml:lang="EN"
+        xmlns="http://www.w3.org/1999/xhtml">
+        <p>
+          Removes an IP from an instance.
+        </p>
+      </xsd:documentation>
+    </annotation>
+  </element>
+
   <!-- Complex Types -->
 
   <complexType abstract="true" name="Action">
@@ -430,6 +454,48 @@
               xmlns="http://www.w3.org/1999/xhtml">
               <p>
                 The address of floating Ip.
+              </p>
+            </xsd:documentation>
+          </annotation>
+        </attribute>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="AddFixedIp">
+    <complexContent>
+      <extension base="csapi:Action" >
+        <sequence>
+          <any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+        <attribute type="xsd:string" name="networkId" use="required">
+          <annotation>
+            <xsd:documentation
+              xml:lang="EN"
+              xmlns="http://www.w3.org/1999/xhtml">
+              <p>
+                The networkID of the fixedIP
+              </p>
+            </xsd:documentation>
+          </annotation>
+        </attribute>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="removeFixedIp">
+    <complexContent>
+      <extension base="csapi:Action" >
+        <sequence>
+          <any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+        <attribute type="xsd:string" name="address" use="required">
+          <annotation>
+            <xsd:documentation
+              xml:lang="EN"
+              xmlns="http://www.w3.org/1999/xhtml">
+              <p>
+                The address of the fixedIP
               </p>
             </xsd:documentation>
           </annotation>

@@ -122,4 +122,59 @@
       </xsd:documentation>
     </annotation>
   </include>
+  <include schemaLocation="keypair.xsd">
+    <annotation>
+      <xsd:documentation
+        xml:lang="EN"
+        xmlns="http://www.w3.org/1999/xhtml">
+        <p>
+          KeyPair
+        </p>
+      </xsd:documentation>
+    </annotation>
+  </include>
+  <include schemaLocation="quota.xsd">
+    <annotation>
+      <xsd:documentation
+        xml:lang="EN"
+        xmlns="http://www.w3.org/1999/xhtml">
+        <p>
+          Quota
+        </p>
+      </xsd:documentation>
+    </annotation>
+  </include>
+  <include schemaLocation="security_group.xsd">
+    <annotation>
+      <xsd:documentation
+        xml:lang="EN"
+        xmlns="http://www.w3.org/1999/xhtml">
+        <p>
+          Security Group
+        </p>
+      </xsd:documentation>
+    </annotation>
+  </include>
+  <include schemaLocation="vsa.xsd">
+    <annotation>
+      <xsd:documentation
+        xml:lang="EN"
+        xmlns="http://www.w3.org/1999/xhtml">
+        <p>
+          Virtul storage array 
+        </p>
+      </xsd:documentation>
+    </annotation>
+  </include>
+  <include schemaLocation="volumes.xsd">
+    <annotation>
+      <xsd:documentation
+        xml:lang="EN"
+        xmlns="http://www.w3.org/1999/xhtml">
+        <p>
+          Volumes 
+        </p>
+      </xsd:documentation>
+    </annotation>
+  </include>
 </schema>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xslt/schema.xsl"?>
+
+<!-- (C) 2011 OpenStack LLC., All Rights Reserved -->
+
+<schema
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:csapi="http://docs.openstack.org/compute/api/v1.1"
+    xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+    targetNamespace="http://docs.openstack.org/compute/api/v1.1"
+>
+  <annotation>
+    <xsd:appinfo
+        xml:lang="EN"
+        xmlns="http://www.w3.org/1999/xhtml">
+      <xsdxt:title>Zones type</xsdxt:title>
+      <xsdxt:link rel="index" href="api.xsd" />
+    </xsd:appinfo>
+    <xsd:documentation
+        xml:lang="EN"
+        xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        This schema file defines a keypair
+      </p>
+    </xsd:documentation>
+  </annotation>
+
+  <!-- Import ATOM specific schema definitions -->
+  <import namespace="http://www.w3.org/2005/Atom" schemaLocation="atom/atom.xsd" />
+
+  <include schemaLocation="common.xsd">
+    <annotation>
+      <xsd:documentation
+          xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+        <p>
+          Common types used by multiple entities and possibly spanning
+          several types of requests.
+        </p>
+      </xsd:documentation>
+    </annotation>
+  </include>
+  <include schemaLocation="faults.xsd">
+    <annotation>
+      <xsd:documentation
+          xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+        <p>
+          All fault types.
+        </p>
+      </xsd:documentation>
+    </annotation>
+  </include>
+
+  <element name="vsa" type="csapi:VSA">
+    <annotation>
+      <xsd:documentation
+          xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+        <p>
+          The element defines a Keypair.
+        </p>
+      </xsd:documentation>
+    </annotation>
+  </element>
+
+  <element name="ipAddress" type="csapi:IpAddress">
+    <annotation>
+      <xsd:documentation
+        xml:lang="EN"
+        xmlns="http://www.w3.org/1999/xhtml">
+        <p>
+          The element defines a ipAddress
+        </p>
+      </xsd:documentation>
+    </annotation>
+  </element>
+ 
+  <!-- Complex Types -->
+  <complexType name="VSA">
+    <annotation>
+      <xsd:documentation
+          xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+        <p>
+          A VSA
+        </p>
+      </xsd:documentation>
+    </annotation>    
+    <attribute name="displayName" type="xsd:string">
+          <annotation>
+              <xsd:documentation
+                  xml:lang="EN"
+                  xmlns="http://www.w3.org/1999/xhtml">
+                  <p>
+                    The displayName of a VSA
+                  </p>
+              </xsd:documentation>
+          </annotation>
+    </attribute>
+    <attribute name="vcType" type="xsd:string">
+      <annotation>
+        <xsd:documentation
+          xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <p>
+            The name of instance type
+          </p>
+        </xsd:documentation>
+      </annotation>
+    </attribute>
+    <attribute name="displayDescription" type="xsd:string">
+      <annotation>
+        <xsd:documentation
+          xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <p>
+            The displayDescription of a VSA
+          </p>
+        </xsd:documentation>
+      </annotation>
+    </attribute>
+    <attribute name="storage" type="xsd:string">
+      <annotation>
+        <xsd:documentation
+          xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <p>
+            The storage of a VSA
+          </p>
+        </xsd:documentation>
+      </annotation>
+    </attribute>
+    <attribute name="shared" type="xsd:string">
+      <annotation>
+        <xsd:documentation
+          xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <p>
+            The shared of a VSA
+          </p>
+        </xsd:documentation>
+      </annotation>
+    </attribute>
+    <element name="placement" type="csapi:Placement">
+    </element>
+    <element name="fault" type="csapi:AsyncAPIFault" minOccurs="0">
+          <annotation>
+              <xsd:documentation
+                  xml:lang="EN"
+                  xmlns="http://www.w3.org/1999/xhtml">
+                  <p>
+                      The detials of a fault that may have occured
+                      while cerating the server or performing a server
+                      action.
+                  </p>
+              </xsd:documentation>
+          </annotation>
+    </element>
+    <anyAttribute namespace="##other" processContents="lax"/>
+  </complexType>
+  
+  <complexType name="Placement">
+    <attribute name="AvailabilityZone" type="xsd:string">
+      <annotation>
+        <xsd:documentation
+          xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <p>
+            The shared of a VSA
+          </p>
+        </xsd:documentation>
+      </annotation>
+    </attribute>
+    <anyAttribute namespace="##other" processContents="lax"/>
+  </complexType>  
+  
+  <simpleType name="IpAddress">
+    <restriction base="xsd:string">
+      <maxLength value="255" />
+    </restriction>
+  </simpleType>
+  
+</schema>
